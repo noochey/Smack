@@ -9,7 +9,6 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import com.selfhack.smack.R
 import com.selfhack.smack.services.AuthService
-import kotlinx.android.synthetic.main.activity_create_user.*
 import kotlinx.android.synthetic.main.activity_login_acitivity.*
 
 class LoginAcitivity : AppCompatActivity() {
@@ -39,7 +38,7 @@ class LoginAcitivity : AppCompatActivity() {
             return
         }
 
-        AuthService.loginUser(this, email, password) { loginSuccess ->
+        AuthService.loginUser(email, password) { loginSuccess ->
             if (loginSuccess) {
                 AuthService.findUserByEmail(this) { findSuccess ->
                     if (findSuccess) {
